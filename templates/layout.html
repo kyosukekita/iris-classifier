@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<title>{{ title }}</title>
+</head>
+<body>
+{% block content %}
+<!-- ここにメインコンテンツを書く -->
+{% endblock %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $('#form').on('submit', function(event){
+        $.ajax({
+            data:{
+                seplen: $('#sepal_length').val(),
+                sepwid: $('#sepal_width').val(),
+                petlen: $('#petal_length').val(),
+                petwid: $('#petal_width').val(),
+            },
+            type:"POST",
+            url:"/iris"
+        })
+        .done(function(data){
+            $('#output').text(data.output).show();
+        });
+        event.preventDefault();
+    });
+});
+</script>
+
+</body>
+</html>

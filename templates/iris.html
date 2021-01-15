@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block content %}
+<body>
+<form id="form" method="post" action="/iris" name="text">
+    <p>This app will classify your iris among three classes (Setosa, Versicolor, Virginica)</p>
+
+    <p>
+    <label>Sepal length in cm</label>
+    <input type="number" step="0.01" id="sepal_length" name="seplen">
+    </p>
+    
+    <p>
+    <label>Sepal width in cm</label>
+    <input type="number" step="0.01" id="sepal_width" name="sepwid">
+    </p>
+
+    <p>
+    <label>Petal length in cm</label>
+    <input type="number" step="0.01" id="petal_length" name="petlen">
+    </p>
+
+    <p>
+    <label>Petal width in cm</label>
+    <input type="number" step="0.01" id="petal_width" name="petwid">
+    </p>
+
+    <p>
+    <input type="submit" value="submit">
+    </p>
+
+    <div id="output"></div>
+
+</form>
+</body>
+
+{% endblock %}
+
+
